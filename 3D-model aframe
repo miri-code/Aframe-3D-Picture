@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D Image in 3D Scene - A-Frame</title>
+    <!-- A-Frame Library -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <!-- A-Frame Scene -->
+    <a-scene background="color: #ECECEC">
+      
+      <!-- Camera and Controls -->
+      <a-entity camera look-controls position="0 1.6 4"></a-entity>
+      
+      <!-- Lighting -->
+      <a-light type="ambient" color="#ffffff"></a-light>
+      <a-light type="directional" color="#ffffff" position="-1 1 1"></a-light>
+      
+      <!-- 2D Image on a 3D Plane -->
+      <a-plane src="#myImage" height="4" width="6" position="0 2 -5" rotation="0 0 0"></a-plane>
+      
+      <!-- 2D Image on a 3D Sphere -->
+      <a-sphere src="#myImage" radius="2.5" position="0 -1 -5" rotation="0 0 0" material="side: double"></a-sphere>
+
+      <!-- Image Asset -->
+      <a-assets>
+        <img id="myImage" src="your-image.jpg" />
+      </a-assets>
+      
+    </a-scene>
+  </body>
+</html>
